@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Map &#8212; Folium 0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/f6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ColorMap" href="colormap.html" />
+    <link rel="prev" title="WmsTileLayer" href="features.html" />
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="colormap.html" title="ColorMap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="features.html" title="WmsTileLayer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Folium 0.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../module.html" accesskey="U">ModuleDescription</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="features.html"
+                        title="previous chapter"><cite>WmsTileLayer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="colormap.html"
+                        title="next chapter"><cite>ColorMap</cite></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/module/folium.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="map">
+<h1><cite>Map</cite><a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="folium.folium.Map">
+<em class="property">class </em><code class="descclassname">folium.folium.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>location=None</em>, <em>width='100%'</em>, <em>height='100%'</em>, <em>left='0%'</em>, <em>top='0%'</em>, <em>position='relative'</em>, <em>tiles='OpenStreetMap'</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=1</em>, <em>zoom_start=10</em>, <em>world_copy_jump=False</em>, <em>no_wrap=False</em>, <em>attr=None</em>, <em>min_lat=-90</em>, <em>max_lat=90</em>, <em>min_lon=-180</em>, <em>max_lon=180</em>, <em>max_bounds=False</em>, <em>detect_retina=False</em>, <em>crs='EPSG3857'</em>, <em>control_scale=False</em>, <em>prefer_canvas=False</em>, <em>no_touch=False</em>, <em>disable_3d=False</em>, <em>subdomains='abc'</em>, <em>png_enabled=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Map with Folium and Leaflet.js</p>
+<p>Generate a base map of given width and height with either default
+tilesets or a custom tileset URL. The following tilesets are built-in
+to Folium. Pass any of the following to the “tiles” keyword:</p>
+<blockquote>
+<div><ul class="simple">
+<li>“OpenStreetMap”</li>
+<li>“Mapbox Bright” (Limited levels of zoom for free tiles)</li>
+<li>“Mapbox Control Room” (Limited levels of zoom for free tiles)</li>
+<li>“Stamen” (Terrain, Toner, and Watercolor)</li>
+<li>“Cloudmade” (Must pass API key)</li>
+<li>“Mapbox” (Must pass API key)</li>
+<li>“CartoDB” (positron and dark_matter)</li>
+</ul>
+</div></blockquote>
+<p>You can pass a custom tileset to Folium by passing a Leaflet-style
+URL to the tiles parameter:
+<a class="reference external" href="http:/">http:/</a>/{s}.yourtiles.com/{z}/{x}/{y}.png</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>location</strong> (<em>tuple</em><em> or </em><em>list</em><em>, </em><em>default None</em>) – Latitude and Longitude of Map (Northing, Easting).</li>
+<li><strong>width</strong> (<em>pixel int</em><em> or </em><em>percentage string</em><em> (</em><em>default: '100%'</em><em>)</em>) – Width of the map.</li>
+<li><strong>height</strong> (<em>pixel int</em><em> or </em><em>percentage string</em><em> (</em><em>default: '100%'</em><em>)</em>) – Height of the map.</li>
+<li><strong>tiles</strong> (<em>str</em><em>, </em><em>default 'OpenStreetMap'</em>) – Map tileset to use. Can choose from a list of built-in tiles,
+pass a custom URL or pass <cite>None</cite> to create a map without tiles.</li>
+<li><strong>API_key</strong> (<em>str</em><em>, </em><em>default None</em>) – API key for Cloudmade or Mapbox tiles.</li>
+<li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximum zoom depth for the map.</li>
+<li><strong>zoom_start</strong> (<em>int</em><em>, </em><em>default 10</em>) – Initial zoom level for the map.</li>
+<li><strong>attr</strong> (<em>string</em><em>, </em><em>default None</em>) – Map tile attribution; only required if passing custom tile URL.</li>
+<li><strong>detect_retina</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true and user is on a retina display, it will request four
+tiles of half the specified size and a bigger zoom level in place
+of one to utilize the high resolution.</li>
+<li><strong>crs</strong> (<em>str</em><em>, </em><em>default 'EPSG3857'</em>) – Defines coordinate reference systems for projecting geographical points
+into pixel (screen) coordinates and back.
+You can use Leaflet’s values :
+* EPSG3857 : The most common CRS for online maps, used by almost all
+free and commercial tile providers. Uses Spherical Mercator projection.
+Set in by default in Map’s crs option.
+* EPSG4326 : A common CRS among GIS enthusiasts.
+Uses simple Equirectangular projection.
+* EPSG3395 : Rarely used by some commercial tile providers.
+Uses Elliptical Mercator projection.
+* Simple : A simple CRS that maps longitude and latitude into
+x and y directly. May be used for maps of flat surfaces
+(e.g. game maps). Note that the y axis should still be inverted
+(going from bottom to top).</li>
+<li><strong>control_scale</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether to add a control scale on the map.</li>
+<li><strong>prefer_canvas</strong> (<em>bool</em><em>, </em><em>default False</em>) – Forces Leaflet to use the Canvas back-end (if available) for
+vector layers instead of SVG. This can increase performance
+considerably in some cases (e.g. many thousands of circle
+markers on the map).</li>
+<li><strong>no_touch</strong> (<em>bool</em><em>, </em><em>default False</em>) – Forces Leaflet to not use touch events even if it detects them.</li>
+<li><strong>disable_3d</strong> (<em>bool</em><em>, </em><em>default False</em>) – Forces Leaflet to not use hardware-accelerated CSS 3D
+transforms for positioning (which may cause glitches in some
+rare environments) even if they’re supported.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Folium LegacyMap Object</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">LegacyMap</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.523</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.675</span><span class="p">],</span>
+<span class="gp">... </span>                       <span class="n">width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">LegacyMap</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.523</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.675</span><span class="p">],</span>
+<span class="go">                           tiles=&#39;Mapbox Control Room&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">LegacyMap</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mf">45.523</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.675</span><span class="p">),</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<span class="go">                           tiles=&#39;Cloudmade&#39;, API_key=&#39;YourKey&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">LegacyMap</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.523</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.675</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="go">                           tiles=(&#39;http://{s}.tiles.mapbox.com/v3/&#39;</span>
+<span class="go">                                  &#39;mapbox.control-room/{z}/{x}/{y}.png&#39;),</span>
+<span class="go">                            attr=&#39;Mapbox attribution&#39;)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="folium.folium.Map.choropleth">
+<code class="descname">choropleth</code><span class="sig-paren">(</span><em>geo_data</em>, <em>data=None</em>, <em>columns=None</em>, <em>key_on=None</em>, <em>threshold_scale=None</em>, <em>fill_color='blue'</em>, <em>fill_opacity=0.6</em>, <em>line_color='black'</em>, <em>line_weight=1</em>, <em>line_opacity=1</em>, <em>legend_name=''</em>, <em>topojson=None</em>, <em>reset=False</em>, <em>smooth_factor=None</em>, <em>highlight=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map.choropleth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a GeoJSON overlay to the map.</p>
+<p>Plot a GeoJSON overlay on the base map. There is no requirement
+to bind data (passing just a GeoJSON plots a single-color overlay),
+but there is a data binding option to map your columnar data to
+different feature objects with a color scale.</p>
+<p>If data is passed as a Pandas DataFrame, the “columns” and “key-on”
+keywords must be included, the first to indicate which DataFrame
+columns to use, the second to indicate the layer in the GeoJSON
+on which to key the data. The ‘columns’ keyword does not need to be
+passed for a Pandas series.</p>
+<p>Colors are generated from color brewer (<a class="reference external" href="http://colorbrewer2.org/">http://colorbrewer2.org/</a>)
+sequential palettes on a D3 threshold scale. The scale defaults to the
+following quantiles: [0, 0.5, 0.75, 0.85, 0.9]. A custom scale can be
+passed to <cite>threshold_scale</cite> of length &lt;=6, in order to match the
+color brewer range.</p>
+<p>TopoJSONs can be passed as “geo_path”, but the “topojson” keyword must
+also be passed with the reference to the topojson objects to convert.
+See the topojson.feature method in the TopoJSON API reference:
+<a class="reference external" href="https://github.com/mbostock/topojson/wiki/API-Reference">https://github.com/mbostock/topojson/wiki/API-Reference</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>geo_path</strong> (<em>string/object</em>) – URL, file path, or data (json, dict, geopandas, etc) to your GeoJSON geometries</li>
+<li><strong>data</strong> (<em>Pandas DataFrame</em><em> or </em><em>Series</em><em>, </em><em>default None</em>) – Data to bind to the GeoJSON.</li>
+<li><strong>columns</strong> (<em>dict</em><em> or </em><em>tuple</em><em>, </em><em>default None</em>) – If the data is a Pandas DataFrame, the columns of data to be bound.
+Must pass column 1 as the key, and column 2 the values.</li>
+<li><strong>key_on</strong> (<em>string</em><em>, </em><em>default None</em>) – Variable in the GeoJSON file to bind the data to. Must always
+start with ‘feature’ and be in JavaScript objection notation.
+Ex: ‘feature.id’ or ‘feature.properties.statename’.</li>
+<li><strong>threshold_scale</strong> (<em>list</em><em>, </em><em>default None</em>) – Data range for D3 threshold scale. Defaults to the following range
+of quantiles: [0, 0.5, 0.75, 0.85, 0.9], rounded to the nearest
+order-of-magnitude integer. Ex: 270 rounds to 200, 5600 to 6000.</li>
+<li><strong>fill_color</strong> (<em>string</em><em>, </em><em>default 'blue'</em>) – Area fill color. Can pass a hex code, color name, or if you are
+binding data, one of the following color brewer palettes:
+‘BuGn’, ‘BuPu’, ‘GnBu’, ‘OrRd’, ‘PuBu’, ‘PuBuGn’, ‘PuRd’, ‘RdPu’,
+‘YlGn’, ‘YlGnBu’, ‘YlOrBr’, and ‘YlOrRd’.</li>
+<li><strong>fill_opacity</strong> (<em>float</em><em>, </em><em>default 0.6</em>) – Area fill opacity, range 0-1.</li>
+<li><strong>line_color</strong> (<em>string</em><em>, </em><em>default 'black'</em>) – GeoJSON geopath line color.</li>
+<li><strong>line_weight</strong> (<em>int</em><em>, </em><em>default 1</em>) – GeoJSON geopath line weight.</li>
+<li><strong>line_opacity</strong> (<em>float</em><em>, </em><em>default 1</em>) – GeoJSON geopath line opacity, range 0-1.</li>
+<li><strong>legend_name</strong> (<em>string</em><em>, </em><em>default empty string</em>) – Title for data legend.</li>
+<li><strong>topojson</strong> (<em>string</em><em>, </em><em>default None</em>) – If using a TopoJSON, passing “objects.yourfeature” to the topojson
+keyword argument will enable conversion to GeoJSON.</li>
+<li><strong>reset</strong> (<em>boolean</em><em>, </em><em>default False</em>) – Remove all current geoJSON layers, start with new layer</li>
+<li><strong>smooth_factor</strong> (<em>float</em><em>, </em><em>default None</em>) – How much to simplify the polyline on each zoom level. More means
+better performance and smoother look, and less means more accurate
+representation. Leaflet defaults to 1.0.</li>
+<li><strong>highlight</strong> (<em>boolean</em><em>, </em><em>default False</em>) – Enable highlight functionality when hovering over a GeoJSON area.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">GeoJSON data layer in obj.template_vars</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;us-states.json&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">line_weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;geo.json&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Data 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Data 2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>             <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.myvalue&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">threshold_scale</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;countries.json&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">topojson</span><span class="o">=</span><span class="s1">&#39;objects.countries&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;geo.json&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Data 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Data 2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>             <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.myvalue&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">threshold_scale</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
+<span class="gp">... </span>             <span class="n">highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="folium.folium.Map.fit_bounds">
+<code class="descname">fit_bounds</code><span class="sig-paren">(</span><em>bounds</em>, <em>padding_top_left=None</em>, <em>padding_bottom_right=None</em>, <em>padding=None</em>, <em>max_zoom=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map.fit_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the map to contain a bounding box with the
+maximum zoom level possible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bounds</strong> (<em>list of</em><em> (</em><em>latitude</em><em>, </em><em>longitude</em><em>) </em><em>points</em>) – Bounding box specified as two points [southwest, northeast]</li>
+<li><strong>padding_top_left</strong> (<em>(</em><em>x</em><em>, </em><em>y</em><em>) </em><em>point</em><em>, </em><em>default None</em>) – Padding in the top left corner. Useful if some elements in
+the corner, such as controls, might obscure objects you’re zooming
+to.</li>
+<li><strong>padding_bottom_right</strong> (<em>(</em><em>x</em><em>, </em><em>y</em><em>) </em><em>point</em><em>, </em><em>default None</em>) – Padding in the bottom right corner.</li>
+<li><strong>padding</strong> (<em>(</em><em>x</em><em>, </em><em>y</em><em>) </em><em>point</em><em>, </em><em>default None</em>) – Equivalent to setting both top left and bottom right padding to
+the same value.</li>
+<li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default None</em>) – Maximum zoom to be used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="mf">52.193636</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.221575</span><span class="p">],</span> <span class="p">[</span><span class="mf">52.636878</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.139759</span><span class="p">]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="colormap.html" title="ColorMap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="features.html" title="WmsTileLayer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Folium 0.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../module.html" >ModuleDescription</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Rob Story.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>
