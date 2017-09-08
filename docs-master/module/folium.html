@@ -179,7 +179,7 @@ sequential palettes on a D3 threshold scale. The scale defaults to the
 following quantiles: [0, 0.5, 0.75, 0.85, 0.9]. A custom scale can be
 passed to <cite>threshold_scale</cite> of length &lt;=6, in order to match the
 color brewer range.</p>
-<p>TopoJSONs can be passed as “geo_path”, but the “topojson” keyword must
+<p>TopoJSONs can be passed as “geo_data”, but the “topojson” keyword must
 also be passed with the reference to the topojson objects to convert.
 See the topojson.feature method in the TopoJSON API reference:
 <a class="reference external" href="https://github.com/mbostock/topojson/wiki/API-Reference">https://github.com/mbostock/topojson/wiki/API-Reference</a></p>
@@ -188,7 +188,7 @@ See the topojson.feature method in the TopoJSON API reference:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>geo_path</strong> (<em>string/object</em>) – URL, file path, or data (json, dict, geopandas, etc) to your GeoJSON geometries</li>
+<li><strong>geo_data</strong> (<em>string/object</em>) – URL, file path, or data (json, dict, geopandas, etc) to your GeoJSON geometries</li>
 <li><strong>data</strong> (<em>Pandas DataFrame</em><em> or </em><em>Series</em><em>, </em><em>default None</em>) – Data to bind to the GeoJSON.</li>
 <li><strong>columns</strong> (<em>dict</em><em> or </em><em>tuple</em><em>, </em><em>default None</em>) – If the data is a Pandas DataFrame, the columns of data to be bound.
 Must pass column 1 as the key, and column 2 the values.</li>
@@ -226,16 +226,16 @@ representation. Leaflet defaults to 1.0.</li>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;us-states.json&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_data</span><span class="o">=</span><span class="s1">&#39;us-states.json&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">line_weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;geo.json&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_data</span><span class="o">=</span><span class="s1">&#39;geo.json&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Data 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Data 2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>             <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.myvalue&#39;</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">threshold_scale</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;countries.json&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_data</span><span class="o">=</span><span class="s1">&#39;countries.json&#39;</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">topojson</span><span class="o">=</span><span class="s1">&#39;objects.countries&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_path</span><span class="o">=</span><span class="s1">&#39;geo.json&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">geo_data</span><span class="o">=</span><span class="s1">&#39;geo.json&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Data 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Data 2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>             <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.myvalue&#39;</span><span class="p">,</span>
 <span class="gp">... </span>             <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">,</span>
