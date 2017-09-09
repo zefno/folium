@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Folium &#8212; Folium 0.2.0 documentation</title>
+    <title>Folium &#8212; Folium 0.4.0+12.g2a2dc9a documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.2.0',
+        VERSION:     '0.4.0+12.g2a2dc9a',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -21,7 +21,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quickstart" href="quickstart.html" />
+    <link rel="next" title="Installing" href="installing.html" />
   </head>
   <body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -31,9 +31,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="quickstart.html" title="Quickstart"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installing.html" title="Installing"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Folium 0.2.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Folium 0.4.0+12.g2a2dc9a documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -41,7 +44,7 @@
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Folium</a><ul>
-<li><a class="reference internal" href="#python-data-leaflet-js-maps">Python Data. Leaflet.js Maps.</a><ul>
+<li><a class="reference internal" href="#python-data-leaflet-js-maps">Python data, leaflet.js maps</a><ul>
 <li><a class="reference internal" href="#concepts">Concepts</a></li>
 <li><a class="reference internal" href="#contents">Contents</a></li>
 </ul>
@@ -51,8 +54,8 @@
 </ul>
 
   <h4>Next topic</h4>
-  <p class="topless"><a href="quickstart.html"
-                        title="next chapter">Quickstart</a></p>
+  <p class="topless"><a href="installing.html"
+                        title="next chapter">Installing</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -82,99 +85,53 @@
 <h1>Folium<a class="headerlink" href="#folium" title="Permalink to this headline">¶</a></h1>
 <img alt="_images/folium_logo.jpg" src="_images/folium_logo.jpg" />
 <div class="section" id="python-data-leaflet-js-maps">
-<h2>Python Data. Leaflet.js Maps.<a class="headerlink" href="#python-data-leaflet-js-maps" title="Permalink to this headline">¶</a></h2>
-<p>Folium builds on the data wrangling strengths of the Python ecosystem and the mapping strengths of the Leaflet.js library. Manipulate your data in Python, then visualize it in on a Leaflet map via Folium.</p>
+<h2>Python data, leaflet.js maps<a class="headerlink" href="#python-data-leaflet-js-maps" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">folium</span></code> builds on the data wrangling strengths of the Python ecosystem and
+the mapping strengths of the <code class="docutils literal"><span class="pre">leaflet.js</span></code> library.
+Manipulate your data in Python,
+then visualize it in on a Leaflet map via <code class="docutils literal"><span class="pre">folium</span></code>.</p>
 <div class="section" id="concepts">
 <h3>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h3>
-<p>Folium makes it easy to visualize data that’s been manipulated in Python on an interactive Leaflet map. It enables both the binding of data to a map for choropleth visualizations as well as passing Vincent/Vega visualizations as markers on the map.</p>
-<p>The library has a number of built-in tilesets from OpenStreetMap, Mapbox, and Stamen, and supports custom tilesets with Mapbox or Cloudmade API keys. Folium supports both GeoJSON and TopoJSON overlays, as well as the binding of data to those overlays to create choropleth maps with color-brewer color schemes.</p>
+<p><code class="docutils literal"><span class="pre">folium</span></code> makes it easy to visualize data that’s been manipulated in Python on an interactive leaflet map.
+It enables both the binding of data to a map for <code class="docutils literal"><span class="pre">choropleth</span></code> visualizations
+as well as passing rich vector/raster/HTML visualizations as markers on the map.</p>
+<p>The library has a number of built-in tilesets from OpenStreetMap,
+Mapbox, and Stamen, and supports custom tilesets with Mapbox or Cloudmade API keys.
+<code class="docutils literal"><span class="pre">folium</span></code> supports both Image, Video, GeoJSON and TopoJSON overlays.</p>
 </div>
 <div class="section" id="contents">
 <h3>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#markers">Markers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#vincent-vega-markers">Vincent/Vega Markers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#geojson-topojson-overlays">GeoJSON/TopoJSON Overlays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#choropleth-maps">Choropleth maps</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installing.html">Installing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installing.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installing.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="installing.html#easiest">Easiest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installing.html#from-source">From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="installing.html#run-the-tests">Run the tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installing.html#build-the-docs">Build the docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#Getting-Started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#Markers">Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#Vincent/Vega-and-Altair/VegaLite-Markers">Vincent/Vega and Altair/VegaLite Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#GeoJSON/TopoJSON-Overlays">GeoJSON/TopoJSON Overlays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#Choropleth-maps">Choropleth maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#Styling-function">Styling function</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to folium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module.html">ModuleDescription</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module.html#element"><code class="docutils literal"><span class="pre">Element</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html"><cite>Element</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#macroelement"><cite>MacroElement</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#figure"><cite>Figure</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#html"><cite>Html</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#div"><cite>Div</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#iframe"><cite>IFrame</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#link"><cite>Link</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#javascriptlink"><cite>JavascriptLink</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/element.html#csslink"><cite>CssLink</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html"><code class="docutils literal"><span class="pre">folium</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#id1">Folium</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="module.html#map"><code class="docutils literal"><span class="pre">Map</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html"><cite>LegacyMap</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#layer"><cite>Layer</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#tilelayer"><cite>TileLayer</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#featuregroup"><cite>FeatureGroup</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#layercontrol"><cite>LayerControl</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#icon"><cite>Icon</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#marker"><cite>Marker</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#popup"><cite>Popup</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/map.html#fitbounds"><cite>FitBounds</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#module-folium.map"><code class="docutils literal"><span class="pre">map</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#id2">Map</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="module.html#features"><code class="docutils literal"><span class="pre">Features</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html"><cite>WmsTileLayer</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#regularpolygonmarker"><cite>RegularPolygonMarker</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#vega"><cite>Vega</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#geojson"><cite>GeoJson</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#topojson"><cite>TopoJson</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#markercluster"><cite>MarkerCluster</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#divicon"><cite>DivIcon</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#circlemarker"><cite>CircleMarker</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#latlngpopup"><cite>LatLngPopup</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#clickformarker"><cite>ClickForMarker</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#polyline"><cite>PolyLine</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/features.html#customicon"><cite>CustomIcon</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#module-folium.features"><code class="docutils literal"><span class="pre">features</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#id3">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="module.html#folium"><code class="docutils literal"><span class="pre">Folium</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="module/folium.html"><cite>Map</cite></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="module.html#colormap"><code class="docutils literal"><span class="pre">Colormap</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="module/colormap.html"><cite>ColorMap</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/colormap.html#linearcolormap"><cite>LinearColormap</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/colormap.html#stepcolormap"><cite>StepColormap</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/colormap.html#linear"><cite>linear</cite></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="module.html#utilities"><code class="docutils literal"><span class="pre">Utilities</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html"><cite>legend_scaler</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html#linear-gradient"><cite>linear_gradient</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html#color-brewer"><cite>color_brewer</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html#split-six"><cite>split_six</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html#image-to-url"><cite>image_to_url</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html#write-png"><cite>write_png</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="module/utilities.html#parse-size"><cite>_parse_size</cite></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#module-folium.utilities"><code class="docutils literal"><span class="pre">utilities</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html"><code class="docutils literal"><span class="pre">plugins</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#folium-plugins">Folium plugins</a></li>
 </ul>
 </li>
 </ul>
@@ -196,9 +153,12 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="quickstart.html" title="Quickstart"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installing.html" title="Installing"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Folium 0.2.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">Folium 0.4.0+12.g2a2dc9a documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
