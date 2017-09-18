@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>folium &#8212; Folium 0.5.0+15.gecd5052 documentation</title>
+    <title>folium &#8212; Folium 0.5.0+20.gf456700 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+15.gecd5052',
+        VERSION:     '0.5.0+20.gf456700',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+15.gecd5052 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+20.gf456700 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -667,58 +667,6 @@ of one to utilize the high resolution.</li>
 <h2>Features<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Extra features Elements.</p>
 <dl class="class">
-<dt id="folium.features.Circle">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">Circle</code><span class="sig-paren">(</span><em>location</em>, <em>radius=10</em>, <em>popup=None</em>, <em>tooltip=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.Circle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#folium.map.Marker" title="folium.map.Marker"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Marker</span></code></a></p>
-<p>Creates a Circle object for plotting on a Map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>location</strong> (<em>tuple</em><em> or </em><em>list</em>) – Latitude and Longitude of Marker (Northing, Easting)</li>
-<li><strong>radius</strong> (<em>int</em>) – The radius of the circle in meters.
-For setting the radius in pixel, use CircleMarker.</li>
-<li><strong>color</strong> (<em>str</em><em>, </em><em>default '#3388ff'</em>) – The color of the marker’s edge in a HTML-compatible format.</li>
-<li><strong>fill</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true the circle will be filled.</li>
-<li><strong>fill_color</strong> (<em>str</em><em>, </em><em>default to the same as color</em>) – The fill color of the marker in a HTML-compatible format.</li>
-<li><strong>fill_opacity</strong> (<em>float</em><em>, </em><em>default 0.2</em>) – The fill opacity of the marker, between 0. and 1.</li>
-<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Input text or visualization for object.</li>
-<li><strong>http</strong> (<em>See</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="folium.features.CircleMarker">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">CircleMarker</code><span class="sig-paren">(</span><em>location</em>, <em>radius=10</em>, <em>popup=None</em>, <em>tooltip=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.CircleMarker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#folium.map.Marker" title="folium.map.Marker"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Marker</span></code></a></p>
-<p>Creates a CircleMarker object for plotting on a Map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>location</strong> (<em>tuple</em><em> or </em><em>list</em>) – Latitude and Longitude of Marker (Northing, Easting)</li>
-<li><strong>radius</strong> (<em>int</em>) – The radius of the circle in pixels.
-For setting the radius in meter, use Circle.</li>
-<li><strong>color</strong> (<em>str</em><em>, </em><em>default '#3388ff'</em>) – The color of the marker’s edge in a HTML-compatible format.</li>
-<li><strong>fill</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true the circle will be filled.</li>
-<li><strong>fill_color</strong> (<em>str</em><em>, </em><em>default to the same as color</em>) – The fill color of the marker in a HTML-compatible format.</li>
-<li><strong>fill_opacity</strong> (<em>float</em><em>, </em><em>default 0.2</em>) – The fill opacity of the marker, between 0. and 1.</li>
-<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Input text or visualization for object.</li>
-<li><strong>http</strong> (<em>See</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
 <dt id="folium.features.ClickForMarker">
 <em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">ClickForMarker</code><span class="sig-paren">(</span><em>popup=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.ClickForMarker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
@@ -903,78 +851,6 @@ returns a corresponding JSON output.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
 <p>When one clicks on a Map that contains a LatLngPopup,
 a popup is shown that displays the latitude and longitude of the pointer.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="folium.features.PolyLine">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">PolyLine</code><span class="sig-paren">(</span><em>locations</em>, <em>popup=None</em>, <em>tooltip=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.PolyLine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#folium.map.Marker" title="folium.map.Marker"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Marker</span></code></a></p>
-<p>Creates a PolyLine (array) or MultiPolyline (array of arrays) object to
-append into a map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>locations</strong> (<em>list of points</em><em> (</em><em>latitude</em><em>, </em><em>longitude</em><em>)</em>) – Latitude and Longitude of line (Northing, Easting)</li>
-<li><strong>color</strong> (<em>string</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>'#03f'</em><em>)</em>) – </li>
-<li><strong>weight</strong> (<em>float</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>5</em><em>)</em>) – </li>
-<li><strong>opacity</strong> (<em>float</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>0.5</em><em>)</em>) – </li>
-<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Input text or visualization for object.</li>
-<li><strong>http</strong> (<em>See</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="folium.features.Polygon">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">Polygon</code><span class="sig-paren">(</span><em>locations</em>, <em>popup=None</em>, <em>tooltip=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.Polygon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#folium.map.Marker" title="folium.map.Marker"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Marker</span></code></a></p>
-<p>Creates a Polygon Marker object for plotting on a Map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>locations</strong> (<em>tuple</em><em> or </em><em>list</em><em>, </em><em>default None</em>) – Latitude and Longitude of Polygon</li>
-<li><strong>color</strong> (<em>string</em><em>, </em><em>default</em><em> (</em><em>'black'</em><em>)</em>) – Edge color of a polygon.</li>
-<li><strong>weight</strong> (<em>float</em><em>, </em><em>default</em><em> (</em><em>1</em><em>)</em>) – Edge line width of a polygon.</li>
-<li><strong>fill_color</strong> (<em>string</em><em>, </em><em>default</em><em> (</em><em>'black'</em><em>)</em>) – Fill color of a polygon.</li>
-<li><strong>fill_opacity</strong> (<em>float</em><em>, </em><em>default</em><em> (</em><em>0.6</em><em>)</em>) – Fill opacity of a polygon.</li>
-<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Input text or visualization for object.</li>
-<li><strong>http</strong> (<em>See</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="class">
-<dt id="folium.features.Rectangle">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">Rectangle</code><span class="sig-paren">(</span><em>bounds</em>, <em>popup=None</em>, <em>tooltip=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.Rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#folium.map.Marker" title="folium.map.Marker"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Marker</span></code></a></p>
-<p>Creates a Rectangle Marker object for plotting on a Map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bounds</strong> (<em>tuple</em><em> or </em><em>list</em><em>, </em><em>default None</em>) – Latitude and Longitude of Marker (southWest and northEast)</li>
-<li><strong>color</strong> (<em>string</em><em>, </em><em>default</em><em> (</em><em>'black'</em><em>)</em>) – Edge color of a rectangle.</li>
-<li><strong>weight</strong> (<em>float</em><em>, </em><em>default</em><em> (</em><em>1</em><em>)</em>) – Edge line width of a rectangle.</li>
-<li><strong>fill_color</strong> (<em>string</em><em>, </em><em>default</em><em> (</em><em>'black'</em><em>)</em>) – Fill color of a rectangle.</li>
-<li><strong>fill_opacity</strong> (<em>float</em><em>, </em><em>default</em><em> (</em><em>0.6</em><em>)</em>) – Fill opacity of a rectangle.</li>
-<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Input text or visualization for object.</li>
-<li><strong>http</strong> (<em>See</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="class">
@@ -1343,7 +1219,7 @@ It must output iterables of length 3 or 4, with values between
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+15.gecd5052 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+20.gf456700 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
