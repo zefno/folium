@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>folium &#8212; Folium 0.5.0+23.gdae9e07 documentation</title>
+    <title>folium &#8212; Folium 0.5.0+27.g2d457b0 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+23.gdae9e07',
+        VERSION:     '0.5.0+27.g2d457b0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+23.gdae9e07 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+27.g2d457b0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -830,13 +830,6 @@ representation. Leaflet defaults to 1.0.</li>
 </pre></div>
 </div>
 <dl class="method">
-<dt id="folium.features.GeoJson.get_bounds">
-<code class="descname">get_bounds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.GeoJson.get_bounds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes the bounds of the object itself (not including it’s children)
-in the form [[lat_min, lon_min], [lat_max, lon_max]]</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="folium.features.GeoJson.style_data">
 <code class="descname">style_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.GeoJson.style_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies <cite>self.style_function</cite> to each feature of <cite>self.data</cite> and
@@ -1081,7 +1074,7 @@ the WMS request.</li>
 <span id="utilities"></span><h1><code class="xref py py-mod docutils literal"><span class="pre">utilities</span></code><a class="headerlink" href="#module-folium.utilities" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="folium.utilities.get_bounds">
-<code class="descclassname">folium.utilities.</code><code class="descname">get_bounds</code><span class="sig-paren">(</span><em>locations</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.utilities.get_bounds" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">folium.utilities.</code><code class="descname">get_bounds</code><span class="sig-paren">(</span><em>locations</em>, <em>lonlat=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.utilities.get_bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the bounds of the object in the form
 [[lat_min, lon_min], [lat_max, lon_max]]</p>
 </dd></dl>
@@ -1117,10 +1110,9 @@ It must output iterables of length 3 or 4, with values between
 </dd></dl>
 
 <dl class="function">
-<dt id="folium.utilities.iter_points">
-<code class="descclassname">folium.utilities.</code><code class="descname">iter_points</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.utilities.iter_points" title="Permalink to this definition">¶</a></dt>
-<dd><p>Iterates over a list representing a feature, and returns a list of points,
-whatever the shape of the array (Point, MultiPolyline, etc).</p>
+<dt id="folium.utilities.iter_coords">
+<code class="descclassname">folium.utilities.</code><code class="descname">iter_coords</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.utilities.iter_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the coordinate tuples from a geometry or feature.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1219,7 +1211,7 @@ It must output iterables of length 3 or 4, with values between
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+23.gdae9e07 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+27.g2d457b0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
