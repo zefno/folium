@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>plugins &#8212; Folium 0.5.0+27.g2d457b0 documentation</title>
+    <title>plugins &#8212; Folium 0.5.0+32.gf598f38 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+27.g2d457b0',
+        VERSION:     '0.5.0+32.gf598f38',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="modules.html" title="folium"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+27.g2d457b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+32.gf598f38 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -201,7 +201,7 @@ default: False</li>
 <dl class="class">
 <dt id="folium.plugins.HeatMap">
 <em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">HeatMap</code><span class="sig-paren">(</span><em>data</em>, <em>name=None</em>, <em>min_opacity=0.5</em>, <em>max_zoom=18</em>, <em>max_val=1.0</em>, <em>radius=25</em>, <em>blur=15</em>, <em>gradient=None</em>, <em>overlay=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.TileLayer" title="folium.map.TileLayer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.TileLayer</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">folium.raster_layers.TileLayer</span></code></p>
 <p>Create a Heatmap layer</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -233,7 +233,7 @@ scales with zoom), equals maxZoom of the map by default</li>
 <dl class="class">
 <dt id="folium.plugins.HeatMapWithTime">
 <em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">HeatMapWithTime</code><span class="sig-paren">(</span><em>data</em>, <em>index=None</em>, <em>name=None</em>, <em>radius=15</em>, <em>min_opacity=0</em>, <em>max_opacity=0.6</em>, <em>scale_radius=False</em>, <em>use_local_extrema=False</em>, <em>auto_play=False</em>, <em>display_index=True</em>, <em>index_steps=1</em>, <em>min_speed=0.1</em>, <em>max_speed=10</em>, <em>speed_step=0.1</em>, <em>position='bottomleft'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMapWithTime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.TileLayer" title="folium.map.TileLayer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.TileLayer</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">folium.raster_layers.TileLayer</span></code></p>
 <p>Create a HeatMapWithTime layer</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -265,52 +265,6 @@ OR a local extrema (the maximum and minimum of the currently displayed view).</l
 <dl class="method">
 <dt id="folium.plugins.HeatMapWithTime.render">
 <code class="descname">render</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMapWithTime.render" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="folium.plugins.ImageOverlay">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">ImageOverlay</code><span class="sig-paren">(</span><em>image</em>, <em>bounds</em>, <em>origin='upper'</em>, <em>colormap=None</em>, <em>mercator_project=False</em>, <em>overlay=True</em>, <em>control=True</em>, <em>pixelated=True</em>, <em>name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.ImageOverlay" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
-<p>Used to load and display a single image over specific bounds of
-the map, implements ILayer interface.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>image</strong> (<em>string</em><em>, </em><em>file</em><em> or </em><em>array-like object</em>) – The data you want to draw on the map.
-* If string, it will be written directly in the output file.
-* If file, it’s content will be converted as embedded in the output file.
-* If array-like, it will be converted to PNG base64 string and embedded in the output.</li>
-<li><strong>bounds</strong> (<em>list</em>) – Image bounds on the map in the form [[lat_min, lon_min],
-[lat_max, lon_max]]</li>
-<li><strong>opacity</strong> (<em>float</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>1.0</em><em>)</em>) – </li>
-<li><strong>alt</strong> (<em>string</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>''</em><em>)</em>) – </li>
-<li><strong>origin</strong> (<em>[</em><em>'upper' | 'lower'</em><em>]</em><em>, </em><em>optional</em><em>, </em><em>default 'upper'</em>) – Place the [0,0] index of the array in the upper left or
-lower left corner of the axes.</li>
-<li><strong>colormap</strong> (callable, used only for <cite>mono</cite> image.) – Function of the form [x -&gt; (r,g,b)] or [x -&gt; (r,g,b,a)]
-for transforming a mono image into RGB.
-It must output iterables of length 3 or 4,
-with values between 0 and 1.
-Hint: you can use colormaps from <cite>matplotlib.cm</cite>.</li>
-<li><strong>mercator_project</strong> (<em>bool</em><em>, </em><em>default False.</em>) – Used only for array-like image.  Transforms the data to
-project (longitude, latitude) coordinates to the
-Mercator projection.
-Beware that this will only work if <cite>image</cite> is an array-like
-object.</li>
-<li><strong>pixelated</strong> (<em>bool</em><em>, </em><em>default True</em>) – Sharp sharp/crips (True) or aliased corners (False).</li>
-<li><strong>http</strong> (<em>See</em>) – </li>
-<li><strong>options.</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="folium.plugins.ImageOverlay.render">
-<code class="descname">render</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.ImageOverlay.render" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -558,28 +512,6 @@ Note: this seems to be overridden by the WMS Tile Layer GetCapabilities.</li>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="folium.plugins.VideoOverlay">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">VideoOverlay</code><span class="sig-paren">(</span><em>video_url</em>, <em>bounds</em>, <em>opacity=1.0</em>, <em>attr=None</em>, <em>autoplay=True</em>, <em>loop=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.VideoOverlay" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
-<p>Used to load and display a video over the map.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>video_url</strong> (<em>URL of the video</em>) – </li>
-<li><strong>bounds</strong> (<em>list</em>) – Video bounds on the map in the form [[lat_min, lon_min],
-[lat_max, lon_max]]</li>
-<li><strong>opacity</strong> (<em>float</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>1.0</em><em>)</em>) – </li>
-<li><strong>attr</strong> (<em>string</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>''</em><em>)</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </div>
 </div>
 
@@ -601,7 +533,7 @@ Note: this seems to be overridden by the WMS Tile Layer GetCapabilities.</li>
         <li class="right" >
           <a href="modules.html" title="folium"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+27.g2d457b0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+32.gf598f38 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
