@@ -4,13 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index &#8212; Folium 0.5.0+32.gf598f38 documentation</title>
+    <title>Index &#8212; Folium 0.5.0+37.gdd24250 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+32.gf598f38',
+        VERSION:     '0.5.0+37.gdd24250',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+32.gf598f38 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+37.gdd24250 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -73,7 +73,6 @@
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
- | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
@@ -103,10 +102,14 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules.html#folium.folium.Map.choropleth">choropleth() (folium.folium.Map method)</a>
 </li>
-      <li><a href="modules.html#folium.features.ClickForMarker">ClickForMarker (class in folium.features)</a>
+      <li><a href="modules.html#folium.vector_layers.Circle">Circle (class in folium.vector_layers)</a>
+</li>
+      <li><a href="modules.html#folium.vector_layers.CircleMarker">CircleMarker (class in folium.vector_layers)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules.html#folium.features.ClickForMarker">ClickForMarker (class in folium.features)</a>
+</li>
       <li><a href="modules.html#folium.features.ColorLine">ColorLine (class in folium.features)</a>
 </li>
       <li><a href="modules.html#folium.features.CustomIcon">CustomIcon (class in folium.features)</a>
@@ -139,17 +142,19 @@
 </li>
       <li><a href="plugins.html#folium.plugins.FloatImage">FloatImage (class in folium.plugins)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules.html#module-folium.features">folium.features (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules.html#module-folium.folium">folium.folium (module)</a>
 </li>
       <li><a href="modules.html#module-folium.map">folium.map (module)</a>
 </li>
       <li><a href="plugins.html#module-folium.plugins">folium.plugins (module)</a>
 </li>
-      <li><a href="modules.html#module-folium.utilities">folium.utilities (module)</a>
+      <li><a href="modules.html#module-folium.raster_layers">folium.raster_layers (module)</a>
+</li>
+      <li><a href="modules.html#module-folium.vector_layers">folium.vector_layers (module)</a>
 </li>
       <li><a href="plugins.html#folium.plugins.Fullscreen">Fullscreen (class in folium.plugins)</a>
 </li>
@@ -161,14 +166,10 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules.html#folium.features.GeoJson">GeoJson (class in folium.features)</a>
 </li>
-      <li><a href="modules.html#folium.features.TopoJson.get_bounds">get_bounds() (folium.features.TopoJson method)</a>
-
-      <ul>
-        <li><a href="modules.html#folium.utilities.get_bounds">(in module folium.utilities)</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules.html#folium.features.TopoJson.get_bounds">get_bounds() (folium.features.TopoJson method)</a>
+</li>
       <li><a href="modules.html#folium.folium.GlobalSwitches">GlobalSwitches (class in folium.folium)</a>
 </li>
   </ul></td>
@@ -193,9 +194,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules.html#folium.utilities.image_to_url">image_to_url() (in module folium.utilities)</a>
-</li>
-      <li><a href="modules.html#folium.utilities.iter_coords">iter_coords() (in module folium.utilities)</a>
+      <li><a href="modules.html#folium.raster_layers.ImageOverlay">ImageOverlay (class in folium.raster_layers)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -227,30 +226,22 @@
 </li>
       <li><a href="plugins.html#folium.plugins.MeasureControl">MeasureControl (class in folium.plugins)</a>
 </li>
-      <li><a href="modules.html#folium.utilities.mercator_transform">mercator_transform() (in module folium.utilities)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="N">N</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules.html#folium.utilities.none_max">none_max() (in module folium.utilities)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules.html#folium.utilities.none_min">none_min() (in module folium.utilities)</a>
-</li>
   </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="plugins.html#folium.plugins.PolyLineTextPath">PolyLineTextPath (class in folium.plugins)</a>
+      <li><a href="modules.html#folium.vector_layers.path_options">path_options() (in module folium.vector_layers)</a>
+</li>
+      <li><a href="modules.html#folium.vector_layers.Polygon">Polygon (class in folium.vector_layers)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules.html#folium.vector_layers.PolyLine">PolyLine (class in folium.vector_layers)</a>
+</li>
+      <li><a href="plugins.html#folium.plugins.PolyLineTextPath">PolyLineTextPath (class in folium.plugins)</a>
+</li>
       <li><a href="modules.html#folium.map.Popup">Popup (class in folium.map)</a>
 </li>
   </ul></td>
@@ -259,6 +250,8 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules.html#folium.vector_layers.Rectangle">Rectangle (class in folium.vector_layers)</a>
+</li>
       <li><a href="modules.html#folium.features.RegularPolygonMarker">RegularPolygonMarker (class in folium.features)</a>
 </li>
       <li><a href="modules.html#folium.features.RegularPolygonMarker.render">render() (folium.features.RegularPolygonMarker method)</a>
@@ -298,6 +291,8 @@
 </li>
         <li><a href="plugins.html#folium.plugins.TimestampedWmsTileLayers.render">(folium.plugins.TimestampedWmsTileLayers method)</a>
 </li>
+        <li><a href="modules.html#folium.raster_layers.ImageOverlay.render">(folium.raster_layers.ImageOverlay method)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -323,10 +318,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="plugins.html#folium.plugins.Terminator">Terminator (class in folium.plugins)</a>
 </li>
-      <li><a href="plugins.html#folium.plugins.TimestampedGeoJson">TimestampedGeoJson (class in folium.plugins)</a>
+      <li><a href="modules.html#folium.raster_layers.TileLayer">TileLayer (class in folium.raster_layers)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="plugins.html#folium.plugins.TimestampedGeoJson">TimestampedGeoJson (class in folium.plugins)</a>
+</li>
       <li><a href="plugins.html#folium.plugins.TimestampedWmsTileLayers">TimestampedWmsTileLayers (class in folium.plugins)</a>
 </li>
       <li><a href="modules.html#folium.features.TopoJson">TopoJson (class in folium.features)</a>
@@ -343,13 +340,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules.html#folium.features.VegaLite">VegaLite (class in folium.features)</a>
 </li>
+      <li><a href="modules.html#folium.raster_layers.VideoOverlay">VideoOverlay (class in folium.raster_layers)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules.html#folium.utilities.write_png">write_png() (in module folium.utilities)</a>
+      <li><a href="modules.html#folium.raster_layers.WmsTileLayer">WmsTileLayer (class in folium.raster_layers)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -370,7 +369,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+32.gf598f38 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+37.gdd24250 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
