@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>plugins &#8212; Folium 0.5.0+44.g1053a02 documentation</title>
+    <title>plugins &#8212; Folium 0.5.0+125.gb3f31bb documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+44.g1053a02',
+        VERSION:     '0.5.0+125.gb3f31bb',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="modules.html" title="folium"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+44.g1053a02 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+125.gb3f31bb documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -389,6 +389,31 @@ overlay day and night regions on maps.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="folium.plugins.TimeSliderChoropleth">
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimeSliderChoropleth</code><span class="sig-paren">(</span><em>data</em>, <em>styledict</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimeSliderChoropleth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modules.html#folium.features.GeoJson" title="folium.features.GeoJson"><code class="xref py py-class docutils literal"><span class="pre">folium.features.GeoJson</span></code></a></p>
+<p>Creates a TimeSliderChoropleth plugin to append into a map with Map.add_child.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>str</em>) – geojson string</li>
+<li><strong>styledict</strong> (<em>dict</em>) – A dictionary where the keys are the geojson feature ids and the values are
+dicts of <cite>{time: style_options_dict}</cite></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="folium.plugins.TimeSliderChoropleth.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimeSliderChoropleth.render" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="folium.plugins.TimestampedGeoJson">
 <em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimestampedGeoJson</code><span class="sig-paren">(</span><em>data</em>, <em>transition_time=200</em>, <em>loop=True</em>, <em>auto_play=True</em>, <em>add_last_point=True</em>, <em>period='P1D'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimestampedGeoJson" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
@@ -533,12 +558,12 @@ Note: this seems to be overridden by the WMS Tile Layer GetCapabilities.</li>
         <li class="right" >
           <a href="modules.html" title="folium"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+44.g1053a02 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+125.gb3f31bb documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Rob Story.
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.4.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.5.Theme by <a href="http://github.com/vkvn">vkvn</a>
     </div>
   </body>
 </html>
