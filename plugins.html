@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>plugins &#8212; Folium 0.5.0+120.g68fe9a9 documentation</title>
+    <title>plugins &#8212; Folium 0.5.0+118.gfe46557 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+120.g68fe9a9',
+        VERSION:     '0.5.0+118.gfe46557',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="modules.html" title="folium"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+120.g68fe9a9 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+118.gfe46557 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -415,7 +415,7 @@ dicts of <cite>{time: style_options_dict}</cite></li>
 
 <dl class="class">
 <dt id="folium.plugins.TimestampedGeoJson">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimestampedGeoJson</code><span class="sig-paren">(</span><em>data</em>, <em>transition_time=200</em>, <em>loop=True</em>, <em>auto_play=True</em>, <em>add_last_point=True</em>, <em>period='P1D'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimestampedGeoJson" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimestampedGeoJson</code><span class="sig-paren">(</span><em>data</em>, <em>transition_time=200</em>, <em>loop=True</em>, <em>auto_play=True</em>, <em>add_last_point=True</em>, <em>period='P1D'</em>, <em>min_speed=0.1</em>, <em>max_speed=10</em>, <em>loop_button=False</em>, <em>date_options='YYYY/MM/DD hh:mm:ss'</em>, <em>time_slider_drag_update=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimestampedGeoJson" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
 <p>Creates a TimestampedGeoJson plugin from timestamped GeoJSONs to append
 into a map with Map.add_child.</p>
@@ -428,27 +428,23 @@ into a map with Map.add_child.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>file</em><em>, </em><em>dict</em><em> or </em><em>str.</em>) – The timestamped geo-json data you want to plot.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>file</em><em>, </em><em>dict</em><em> or </em><em>str.</em>) – The timestamped geo-json data you want to plot.
 * If file, then data will be read in the file and fully embedded in Leaflet’s javascript.
 * If dict, then data will be converted to json and embedded in the javascript.
-* If str, then data will be passed to the javascript as-is.</td>
+* If str, then data will be passed to the javascript as-is.</li>
+<li><strong>transition_time</strong> (<em>int</em><em>, </em><em>default 200.</em>) – The duration in ms of a transition from between timestamps.</li>
+<li><strong>loop</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the animation shall loop.</li>
+<li><strong>auto_play</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the animation shall start automatically at startup.</li>
+<li><strong>add_last_point</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether a point is added at the last valid coordinate of a LineString.</li>
+<li><strong>period</strong> (<em>str</em><em>, </em><em>default &quot;P1D&quot;</em>) – Used to construct the array of available times starting
+from the first available time. Format: ISO8601 Duration
+ex: ‘P1M’ -&gt; 1/month, ‘P1D’ -&gt; 1/day, ‘PT1H’ -&gt; 1/hour, and’PT1M’ -&gt; 1/minute</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>transition_time: int, default 200.</dt>
-<dd>The duration in ms of a transition from between timestamps.</dd>
-<dt>loop: bool, default True</dt>
-<dd>Whether the animation shall loop.</dd>
-<dt>auto_play: bool, default True</dt>
-<dd>Whether the animation shall start automatically at startup.</dd>
-<dt>add_last_point: bool, default True</dt>
-<dd>Whether a point is added at the last valid coordinate of a LineString.</dd>
-<dt>period: str, default “P1D”</dt>
-<dd>Used to construct the array of available times starting
-from the first available time. Format: ISO8601 Duration
-ex: ‘P1M’ -&gt; 1/month, ‘P1D’ -&gt; 1/day, ‘PT1H’ -&gt; 1/hour, and’PT1M’ -&gt; 1/minute</dd>
-</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TimestampedGeoJson</span><span class="p">({</span>
 <span class="gp">... </span>    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;FeatureCollection&#39;</span><span class="p">,</span>
@@ -588,7 +584,7 @@ default ‘topleft’</li>
         <li class="right" >
           <a href="modules.html" title="folium"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+120.g68fe9a9 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+118.gfe46557 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
