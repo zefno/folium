@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>folium &#8212; Folium 0.5.0+116.gf8a12a6 documentation</title>
+    <title>folium &#8212; Folium 0.5.0+115.g53bf936 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+116.gf8a12a6',
+        VERSION:     '0.5.0+115.g53bf936',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+116.gf8a12a6 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+115.g53bf936 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -466,7 +466,8 @@ popup text or Vincent visualization.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>location</strong> (<em>tuple</em><em> or </em><em>list</em><em>, </em><em>default None</em>) – Latitude and Longitude of Marker (Northing, Easting)</li>
-<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Input text or visualization for object.</li>
+<li><strong>popup</strong> (<em>string</em><em> or </em><em>folium.Popup</em><em>, </em><em>default None</em>) – Label for the Marker; either an escaped HTML string to initialize
+folium.Popup or a folium.Popup instance.</li>
 <li><strong>icon</strong> (<em>Icon plugin</em>) – the Icon plugin to use to render the marker.</li>
 </ul>
 </td>
@@ -482,6 +483,9 @@ popup text or Vincent visualization.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.3</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="s1">&#39;Portland, OR&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.3</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="s1">&#39;Portland, OR&#39;</span><span class="p">))</span>
+<span class="go"># If the popup label has characters that need to be escaped in HTML</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.3</span><span class="p">],</span>
+<span class="go">           popoup=folium.Popup(&#39;Mom &amp; Pop Arrow Shop &gt;&gt;&#39;, parse_html=True))</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1216,7 +1220,7 @@ Ex: ‘relative’, ‘absolute’</li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+116.gf8a12a6 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+115.g53bf936 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
