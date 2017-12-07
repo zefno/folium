@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>folium &#8212; Folium 0.5.0+115.g53bf936 documentation</title>
+    <title>folium &#8212; Folium 0.5.0+113.g106d829 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+115.g53bf936',
+        VERSION:     '0.5.0+113.g106d829',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+115.g53bf936 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+113.g106d829 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -96,7 +96,7 @@
 
 <dl class="class">
 <dt id="folium.folium.Map">
-<em class="property">class </em><code class="descclassname">folium.folium.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>location=None</em>, <em>width='100%'</em>, <em>height='100%'</em>, <em>left='0%'</em>, <em>top='0%'</em>, <em>position='relative'</em>, <em>tiles='OpenStreetMap'</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=1</em>, <em>zoom_start=10</em>, <em>world_copy_jump=False</em>, <em>no_wrap=False</em>, <em>attr=None</em>, <em>min_lat=-90</em>, <em>max_lat=90</em>, <em>min_lon=-180</em>, <em>max_lon=180</em>, <em>max_bounds=False</em>, <em>detect_retina=False</em>, <em>crs='EPSG3857'</em>, <em>control_scale=False</em>, <em>prefer_canvas=False</em>, <em>no_touch=False</em>, <em>disable_3d=False</em>, <em>subdomains='abc'</em>, <em>png_enabled=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.folium.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>location=None</em>, <em>width='100%'</em>, <em>height='100%'</em>, <em>left='0%'</em>, <em>top='0%'</em>, <em>position='relative'</em>, <em>tiles='OpenStreetMap'</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=0</em>, <em>zoom_start=10</em>, <em>world_copy_jump=False</em>, <em>no_wrap=False</em>, <em>attr=None</em>, <em>min_lat=-90</em>, <em>max_lat=90</em>, <em>min_lon=-180</em>, <em>max_lon=180</em>, <em>max_bounds=False</em>, <em>detect_retina=False</em>, <em>crs='EPSG3857'</em>, <em>control_scale=False</em>, <em>prefer_canvas=False</em>, <em>no_touch=False</em>, <em>disable_3d=False</em>, <em>subdomains='abc'</em>, <em>png_enabled=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
 <p>Create a Map with Folium and Leaflet.js</p>
 <p>Generate a base map of given width and height with either default
@@ -126,7 +126,8 @@ URL to the tiles parameter: <code class="docutils literal"><span class="pre">htt
 <li><strong>tiles</strong> (<em>str</em><em>, </em><em>default 'OpenStreetMap'</em>) – Map tileset to use. Can choose from a list of built-in tiles,
 pass a custom URL or pass <cite>None</cite> to create a map without tiles.</li>
 <li><strong>API_key</strong> (<em>str</em><em>, </em><em>default None</em>) – API key for Cloudmade or Mapbox tiles.</li>
-<li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximum zoom depth for the map.</li>
+<li><strong>min_zoom</strong> (<em>int</em><em>, </em><em>default 0</em>) – Minimum allowed zoom level for the tile layer that is created.</li>
+<li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximum allowed zoom level for the tile layer that is created.</li>
 <li><strong>zoom_start</strong> (<em>int</em><em>, </em><em>default 10</em>) – Initial zoom level for the map.</li>
 <li><strong>attr</strong> (<em>string</em><em>, </em><em>default None</em>) – Map tile attribution; only required if passing custom tile URL.</li>
 <li><strong>detect_retina</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true and user is on a retina display, it will request four
@@ -183,7 +184,7 @@ rare environments) even if they’re supported.</li>
 </div>
 <dl class="method">
 <dt id="folium.folium.Map.add_tile_layer">
-<code class="descname">add_tile_layer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>name=None</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=1</em>, <em>attr=None</em>, <em>active=False</em>, <em>detect_retina=False</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map.add_tile_layer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_tile_layer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>name=None</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=0</em>, <em>attr=None</em>, <em>active=False</em>, <em>detect_retina=False</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map.add_tile_layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a tile layer to the map. See TileLayer for options.</p>
 </dd></dl>
 
@@ -735,7 +736,7 @@ object.</li>
 
 <dl class="class">
 <dt id="folium.raster_layers.TileLayer">
-<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">TileLayer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>min_zoom=1</em>, <em>max_zoom=18</em>, <em>attr=None</em>, <em>API_key=None</em>, <em>detect_retina=False</em>, <em>name=None</em>, <em>overlay=False</em>, <em>control=True</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.TileLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">TileLayer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>min_zoom=0</em>, <em>max_zoom=18</em>, <em>attr=None</em>, <em>API_key=None</em>, <em>detect_retina=False</em>, <em>name=None</em>, <em>overlay=False</em>, <em>control=True</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.TileLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Create a tile layer to append on a Map.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -759,8 +760,8 @@ object.</li>
 <p>You can pass a custom tileset to Folium by passing a Leaflet-style
 URL to the tiles parameter: <code class="docutils literal"><span class="pre">http://{s}.yourtiles.com/{z}/{x}/{y}.png</span></code></p>
 </li>
-<li><strong>min_zoom</strong> (<em>int</em><em>, </em><em>default 1</em>) – Minimal zoom for which the layer will be displayed.</li>
-<li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximal zoom for which the layer will be displayed.</li>
+<li><strong>min_zoom</strong> (<em>int</em><em>, </em><em>default 0</em>) – Minimum allowed zoom level for this tile layer.</li>
+<li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximum allowed zoom level for this tile layer.</li>
 <li><strong>attr</strong> (<em>string</em><em>, </em><em>default None</em>) – Map tile attribution; only required if passing custom tile URL.</li>
 <li><strong>API_key</strong> (<em>str</em><em>, </em><em>default None</em>) – API key for Cloudmade or Mapbox tiles.</li>
 <li><strong>detect_retina</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true and user is on a retina display, it will request four
@@ -1220,7 +1221,7 @@ Ex: ‘relative’, ‘absolute’</li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+115.g53bf936 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+113.g106d829 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
