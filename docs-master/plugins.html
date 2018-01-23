@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>plugins &#8212; Folium 0.5.0+113.g106d829 documentation</title>
+    <title>plugins &#8212; Folium 0.5.0+105.g9e2ee74 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+113.g106d829',
+        VERSION:     '0.5.0+105.g9e2ee74',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="modules.html" title="folium"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+113.g106d829 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g9e2ee74 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -132,7 +132,7 @@ If None, then no wind is represented.</li>
 
 <dl class="class">
 <dt id="folium.plugins.FastMarkerCluster">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">FastMarkerCluster</code><span class="sig-paren">(</span><em>data</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.FastMarkerCluster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">FastMarkerCluster</code><span class="sig-paren">(</span><em>data</em>, <em>callback=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.FastMarkerCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">folium.plugins.marker_cluster.MarkerCluster</span></code></p>
 <p>Add marker clusters to a map using in-browser rendering.
 Using FastMarkerCluster it is possible to render 000’s of
@@ -152,6 +152,10 @@ the form [[lat, lng]].</li>
 <li><strong>callback</strong> (<em>string</em><em>, </em><em>default None</em>) – A string representation of a valid Javascript function
 that will be passed a lat, lon coordinate pair. See the
 FasterMarkerCluster for an example of a custom callback.</li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls.</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -200,8 +204,8 @@ default: False</li>
 
 <dl class="class">
 <dt id="folium.plugins.HeatMap">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">HeatMap</code><span class="sig-paren">(</span><em>data</em>, <em>name=None</em>, <em>min_opacity=0.5</em>, <em>max_zoom=18</em>, <em>max_val=1.0</em>, <em>radius=25</em>, <em>blur=15</em>, <em>gradient=None</em>, <em>overlay=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modules.html#folium.raster_layers.TileLayer" title="folium.raster_layers.TileLayer"><code class="xref py py-class docutils literal"><span class="pre">folium.raster_layers.TileLayer</span></code></a></p>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">HeatMap</code><span class="sig-paren">(</span><em>data</em>, <em>name=None</em>, <em>min_opacity=0.5</em>, <em>max_zoom=18</em>, <em>max_val=1.0</em>, <em>radius=25</em>, <em>blur=15</em>, <em>gradient=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Create a Heatmap layer</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -210,7 +214,7 @@ default: False</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>data</strong> (<em>list of points of the form</em><em> [</em><em>lat</em><em>, </em><em>lng</em><em>] or </em><em>[</em><em>lat</em><em>, </em><em>lng</em><em>, </em><em>weight</em><em>]</em>) – The points you want to plot.
 You can also provide a numpy.array of shape (n,2) or (n,3).</li>
-<li><strong>name</strong> (<em>str</em>) – The name of the layer that will be created.</li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls.</li>
 <li><strong>min_opacity</strong> (<em>default 1.</em>) – The minimum opacity the heat will start at.</li>
 <li><strong>max_zoom</strong> (<em>default 18</em>) – Zoom level where the points reach maximum intensity (as intensity
 scales with zoom), equals maxZoom of the map by default</li>
@@ -218,6 +222,9 @@ scales with zoom), equals maxZoom of the map by default</li>
 <li><strong>radius</strong> (<em>int</em><em>, </em><em>default 25</em>) – Radius of each “point” of the heatmap</li>
 <li><strong>blur</strong> (<em>int</em><em>, </em><em>default 15</em>) – Amount of blur</li>
 <li><strong>gradient</strong> (<em>dict</em><em>, </em><em>default None</em>) – Color gradient config. e.g. {0.4: ‘blue’, 0.65: ‘lime’, 1: ‘red’}</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -232,8 +239,8 @@ scales with zoom), equals maxZoom of the map by default</li>
 
 <dl class="class">
 <dt id="folium.plugins.HeatMapWithTime">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">HeatMapWithTime</code><span class="sig-paren">(</span><em>data</em>, <em>index=None</em>, <em>name=None</em>, <em>radius=15</em>, <em>min_opacity=0</em>, <em>max_opacity=0.6</em>, <em>scale_radius=False</em>, <em>use_local_extrema=False</em>, <em>auto_play=False</em>, <em>display_index=True</em>, <em>index_steps=1</em>, <em>min_speed=0.1</em>, <em>max_speed=10</em>, <em>speed_step=0.1</em>, <em>position='bottomleft'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMapWithTime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modules.html#folium.raster_layers.TileLayer" title="folium.raster_layers.TileLayer"><code class="xref py py-class docutils literal"><span class="pre">folium.raster_layers.TileLayer</span></code></a></p>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">HeatMapWithTime</code><span class="sig-paren">(</span><em>data</em>, <em>index=None</em>, <em>name=None</em>, <em>radius=15</em>, <em>min_opacity=0</em>, <em>max_opacity=0.6</em>, <em>scale_radius=False</em>, <em>use_local_extrema=False</em>, <em>auto_play=False</em>, <em>display_index=True</em>, <em>index_steps=1</em>, <em>min_speed=0.1</em>, <em>max_speed=10</em>, <em>speed_step=0.1</em>, <em>position='bottomleft'</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.HeatMapWithTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Create a HeatMapWithTime layer</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -243,7 +250,7 @@ scales with zoom), equals maxZoom of the map by default</li>
 <li><strong>data</strong> (<em>list of list of points of the form</em><em> [</em><em>lat</em><em>, </em><em>lng</em><em>] or </em><em>[</em><em>lat</em><em>, </em><em>lng</em><em>, </em><em>weight</em><em>]</em>) – The points you want to plot. The outer list corresponds to the various time
 steps in sequential order. (weight defaults to 1 if not specified for a point)</li>
 <li><strong>index</strong> (<em>Index giving the label</em><em> (or </em><em>timestamp</em><em>) </em><em>of the elements of data. Should have</em>) – the same length as data, or is replaced by a simple count if not specified.</li>
-<li><strong>name</strong> (<em>str</em>) – The name of the layer that will be created.</li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls.</li>
 <li><strong>radius</strong> (<em>default 15.</em>) – The radius used around points for the heatmap.</li>
 <li><strong>min_opacity</strong> (<em>default 0</em>) – The minimum opacity for the heatmap.</li>
 <li><strong>max_opacity</strong> (<em>default 0.6</em>) – The maximum opacity for the heatmap.</li>
@@ -257,6 +264,9 @@ OR a local extrema (the maximum and minimum of the currently displayed view).</l
 <li><strong>max_speed</strong> (<em>default 10</em>) – Maximum fps speed for animation.</li>
 <li><strong>speed_step</strong> (<em>default 0.1</em>) – Step between different fps speeds on the speed slider.</li>
 <li><strong>position</strong> (<em>default 'bottomleft'</em>) – Position string for the time slider. Format: ‘bottom/top’+’left/right’.</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -271,7 +281,7 @@ OR a local extrema (the maximum and minimum of the currently displayed view).</l
 
 <dl class="class">
 <dt id="folium.plugins.MarkerCluster">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">MarkerCluster</code><span class="sig-paren">(</span><em>locations=None</em>, <em>popups=None</em>, <em>icons=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>icon_create_function=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.MarkerCluster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">MarkerCluster</code><span class="sig-paren">(</span><em>locations=None</em>, <em>popups=None</em>, <em>icons=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em>, <em>icon_create_function=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.MarkerCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Provides Beautiful Animated Marker Clustering functionality for maps.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -280,8 +290,9 @@ OR a local extrema (the maximum and minimum of the currently displayed view).</l
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
-<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default False</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
-<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 <li><strong>icon_create_function</strong> (<em>string</em><em>, </em><em>default None</em>) – Override the default behaviour, making possible to customize
 markers colors and sizes.</li>
 <li><strong>locations</strong> (<em>list of list</em><em> or </em><em>array of shape</em><em> (</em><em>n</em><em>, </em><em>2</em><em>)</em><em></em>) – Data points of the form [[lat, lng]].</li>
@@ -390,7 +401,7 @@ overlay day and night regions on maps.</p>
 
 <dl class="class">
 <dt id="folium.plugins.TimeSliderChoropleth">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimeSliderChoropleth</code><span class="sig-paren">(</span><em>data</em>, <em>styledict</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimeSliderChoropleth" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimeSliderChoropleth</code><span class="sig-paren">(</span><em>data</em>, <em>styledict</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimeSliderChoropleth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="modules.html#folium.features.GeoJson" title="folium.features.GeoJson"><code class="xref py py-class docutils literal"><span class="pre">folium.features.GeoJson</span></code></a></p>
 <p>Creates a TimeSliderChoropleth plugin to append into a map with Map.add_child.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -401,6 +412,10 @@ overlay day and night regions on maps.</p>
 <li><strong>data</strong> (<em>str</em>) – geojson string</li>
 <li><strong>styledict</strong> (<em>dict</em>) – A dictionary where the keys are the geojson feature ids and the values are
 dicts of <cite>{time: style_options_dict}</cite></li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls.</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default False</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -473,7 +488,7 @@ ex: ‘P1M’ -&gt; 1/month, ‘P1D’ -&gt; 1/day, ‘PT1H’ -&gt; 1/hour, and
 
 <dl class="class">
 <dt id="folium.plugins.TimestampedWmsTileLayers">
-<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimestampedWmsTileLayers</code><span class="sig-paren">(</span><em>data</em>, <em>transition_time=200</em>, <em>loop=False</em>, <em>auto_play=False</em>, <em>period='P1D'</em>, <em>time_interval=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimestampedWmsTileLayers" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">TimestampedWmsTileLayers</code><span class="sig-paren">(</span><em>data</em>, <em>transition_time=200</em>, <em>loop=False</em>, <em>auto_play=False</em>, <em>period='P1D'</em>, <em>time_interval=False</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.TimestampedWmsTileLayers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="modules.html#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Creates a TimestampedWmsTileLayer that takes a WmsTileLayer and adds time
 control with the Leaflet.TimeDimension plugin.</p>
@@ -494,6 +509,10 @@ is to reduce load on WMS services.</li>
 from the first available time. Format: ISO8601 Duration
 ex: ‘P1M’ -&gt; 1/month, ‘P1D’ -&gt; 1/day, ‘PT1H’ -&gt; 1/hour, and ‘PT1M’ -&gt; 1/minute
 Note: this seems to be overridden by the WMS Tile Layer GetCapabilities.</li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls.</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -584,12 +603,12 @@ default ‘topleft’</li>
         <li class="right" >
           <a href="modules.html" title="folium"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+113.g106d829 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g9e2ee74 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Rob Story.
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.5.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.6.Theme by <a href="http://github.com/vkvn">vkvn</a>
     </div>
   </body>
 </html>
