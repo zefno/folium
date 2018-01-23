@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>folium &#8212; Folium 0.5.0+113.g106d829 documentation</title>
+    <title>folium &#8212; Folium 0.5.0+105.g9e2ee74 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0+113.g106d829',
+        VERSION:     '0.5.0+105.g9e2ee74',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+113.g106d829 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g9e2ee74 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -96,7 +96,7 @@
 
 <dl class="class">
 <dt id="folium.folium.Map">
-<em class="property">class </em><code class="descclassname">folium.folium.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>location=None</em>, <em>width='100%'</em>, <em>height='100%'</em>, <em>left='0%'</em>, <em>top='0%'</em>, <em>position='relative'</em>, <em>tiles='OpenStreetMap'</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=0</em>, <em>zoom_start=10</em>, <em>world_copy_jump=False</em>, <em>no_wrap=False</em>, <em>attr=None</em>, <em>min_lat=-90</em>, <em>max_lat=90</em>, <em>min_lon=-180</em>, <em>max_lon=180</em>, <em>max_bounds=False</em>, <em>detect_retina=False</em>, <em>crs='EPSG3857'</em>, <em>control_scale=False</em>, <em>prefer_canvas=False</em>, <em>no_touch=False</em>, <em>disable_3d=False</em>, <em>subdomains='abc'</em>, <em>png_enabled=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.folium.</code><code class="descname">Map</code><span class="sig-paren">(</span><em>location=None</em>, <em>width='100%'</em>, <em>height='100%'</em>, <em>left='0%'</em>, <em>top='0%'</em>, <em>position='relative'</em>, <em>tiles='OpenStreetMap'</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=0</em>, <em>max_native_zoom=None</em>, <em>zoom_start=10</em>, <em>world_copy_jump=False</em>, <em>no_wrap=False</em>, <em>attr=None</em>, <em>min_lat=-90</em>, <em>max_lat=90</em>, <em>min_lon=-180</em>, <em>max_lon=180</em>, <em>max_bounds=False</em>, <em>detect_retina=False</em>, <em>crs='EPSG3857'</em>, <em>control_scale=False</em>, <em>prefer_canvas=False</em>, <em>no_touch=False</em>, <em>disable_3d=False</em>, <em>subdomains='abc'</em>, <em>png_enabled=False</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
 <p>Create a Map with Folium and Leaflet.js</p>
 <p>Generate a base map of given width and height with either default
@@ -128,6 +128,8 @@ pass a custom URL or pass <cite>None</cite> to create a map without tiles.</li>
 <li><strong>API_key</strong> (<em>str</em><em>, </em><em>default None</em>) – API key for Cloudmade or Mapbox tiles.</li>
 <li><strong>min_zoom</strong> (<em>int</em><em>, </em><em>default 0</em>) – Minimum allowed zoom level for the tile layer that is created.</li>
 <li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximum allowed zoom level for the tile layer that is created.</li>
+<li><strong>max_native_zoom</strong> (<em>int</em><em>, </em><em>default None</em>) – The highest zoom level at which the tile server can provide tiles.
+If provided you can zoom in past this level. Else tiles will turn grey.</li>
 <li><strong>zoom_start</strong> (<em>int</em><em>, </em><em>default 10</em>) – Initial zoom level for the map.</li>
 <li><strong>attr</strong> (<em>string</em><em>, </em><em>default None</em>) – Map tile attribution; only required if passing custom tile URL.</li>
 <li><strong>detect_retina</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true and user is on a retina display, it will request four
@@ -184,7 +186,7 @@ rare environments) even if they’re supported.</li>
 </div>
 <dl class="method">
 <dt id="folium.folium.Map.add_tile_layer">
-<code class="descname">add_tile_layer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>name=None</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=0</em>, <em>attr=None</em>, <em>active=False</em>, <em>detect_retina=False</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map.add_tile_layer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_tile_layer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>name=None</em>, <em>API_key=None</em>, <em>max_zoom=18</em>, <em>min_zoom=0</em>, <em>max_native_zoom=None</em>, <em>attr=None</em>, <em>active=False</em>, <em>detect_retina=False</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.folium.Map.add_tile_layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a tile layer to the map. See TileLayer for options.</p>
 </dd></dl>
 
@@ -315,7 +317,7 @@ the same value.</li>
 <p>Classes for drawing maps.</p>
 <dl class="class">
 <dt id="folium.map.FeatureGroup">
-<em class="property">class </em><code class="descclassname">folium.map.</code><code class="descname">FeatureGroup</code><span class="sig-paren">(</span><em>name=None</em>, <em>overlay=True</em>, <em>control=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.map.FeatureGroup" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.map.</code><code class="descname">FeatureGroup</code><span class="sig-paren">(</span><em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.map.FeatureGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Create a FeatureGroup layer ; you can put things in it and handle them
 as a single layer.  For example, you can add a LayerControl to
@@ -330,6 +332,8 @@ It will be displayed in the LayerControl.
 If None get_name() will be called to get the technical (ugly) name.</li>
 <li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether your layer will be an overlay (ticked with a check box in
 LayerControls) or a base layer (ticked with a radio button).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -403,7 +407,7 @@ the <cite>prefix</cite> as well.</li>
 
 <dl class="class">
 <dt id="folium.map.Layer">
-<em class="property">class </em><code class="descclassname">folium.map.</code><code class="descname">Layer</code><span class="sig-paren">(</span><em>name=None</em>, <em>overlay=False</em>, <em>control=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.map.Layer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.map.</code><code class="descname">Layer</code><span class="sig-paren">(</span><em>name=None</em>, <em>overlay=False</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.map.Layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">branca.element.MacroElement</span></code></p>
 <p>An abstract class for everything that is a Layer on the map.
 It will be used to define whether an object will be included in
@@ -416,6 +420,7 @@ LayerControls.</p>
 <li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
 <li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default False</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
 <li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -690,7 +695,7 @@ map (unless L.DomEvent.stopPropagation is used).</li>
 <p>Wraps leaflet TileLayer, WmsTileLayer (TileLayer.WMS), ImageOverlay, and VideoOverlay</p>
 <dl class="class">
 <dt id="folium.raster_layers.ImageOverlay">
-<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">ImageOverlay</code><span class="sig-paren">(</span><em>image</em>, <em>bounds</em>, <em>origin='upper'</em>, <em>colormap=None</em>, <em>mercator_project=False</em>, <em>overlay=True</em>, <em>control=True</em>, <em>pixelated=True</em>, <em>name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.ImageOverlay" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">ImageOverlay</code><span class="sig-paren">(</span><em>image</em>, <em>bounds</em>, <em>origin='upper'</em>, <em>colormap=None</em>, <em>mercator_project=False</em>, <em>pixelated=True</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.ImageOverlay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Used to load and display a single image over specific bounds of
 the map, implements ILayer interface.</p>
@@ -720,6 +725,10 @@ Mercator projection.
 Beware that this will only work if <cite>image</cite> is an array-like
 object.</li>
 <li><strong>pixelated</strong> (<em>bool</em><em>, </em><em>default True</em>) – Sharp sharp/crips (True) or aliased corners (False).</li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 <li><strong>http</strong> (<em>See</em>) – </li>
 <li><strong>options.</strong> – </li>
 </ul>
@@ -736,7 +745,7 @@ object.</li>
 
 <dl class="class">
 <dt id="folium.raster_layers.TileLayer">
-<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">TileLayer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>min_zoom=0</em>, <em>max_zoom=18</em>, <em>attr=None</em>, <em>API_key=None</em>, <em>detect_retina=False</em>, <em>name=None</em>, <em>overlay=False</em>, <em>control=True</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.TileLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">TileLayer</code><span class="sig-paren">(</span><em>tiles='OpenStreetMap'</em>, <em>min_zoom=0</em>, <em>max_zoom=18</em>, <em>max_native_zoom=None</em>, <em>attr=None</em>, <em>API_key=None</em>, <em>detect_retina=False</em>, <em>name=None</em>, <em>overlay=False</em>, <em>control=True</em>, <em>show=True</em>, <em>no_wrap=False</em>, <em>subdomains='abc'</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.TileLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Create a tile layer to append on a Map.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -748,20 +757,22 @@ object.</li>
 <dt>Map tileset to use. Can choose from this list of built-in tiles:</dt>
 <dd><ul class="first last">
 <li>”OpenStreetMap”</li>
-<li>”Mapbox Bright” (Limited levels of zoom for free tiles)</li>
-<li>”Mapbox Control Room” (Limited levels of zoom for free tiles)</li>
-<li>”Stamen” (Terrain, Toner, and Watercolor)</li>
+<li>”Stamen Terrain”, “Stamen Toner”, “Stamen Watercolor”</li>
+<li>”CartoDB positron”, “CartoDB dark_matter”</li>
+<li>”Mapbox Bright”, “Mapbox Control Room” (Limited zoom)</li>
 <li>”Cloudmade” (Must pass API key)</li>
 <li>”Mapbox” (Must pass API key)</li>
-<li>”CartoDB” (positron and dark_matter)</li>
 </ul>
 </dd>
 </dl>
 <p>You can pass a custom tileset to Folium by passing a Leaflet-style
-URL to the tiles parameter: <code class="docutils literal"><span class="pre">http://{s}.yourtiles.com/{z}/{x}/{y}.png</span></code></p>
+URL to the tiles parameter: <code class="docutils literal"><span class="pre">http://{s}.yourtiles.com/{z}/{x}/{y}.png</span></code>
+You must then also provide attribution, use the <cite>attr</cite> keyword.</p>
 </li>
 <li><strong>min_zoom</strong> (<em>int</em><em>, </em><em>default 0</em>) – Minimum allowed zoom level for this tile layer.</li>
 <li><strong>max_zoom</strong> (<em>int</em><em>, </em><em>default 18</em>) – Maximum allowed zoom level for this tile layer.</li>
+<li><strong>max_native_zoom</strong> (<em>int</em><em>, </em><em>default None</em>) – The highest zoom level at which the tile server can provide tiles.
+If provided you can zoom in past this level. Else tiles will turn grey.</li>
 <li><strong>attr</strong> (<em>string</em><em>, </em><em>default None</em>) – Map tile attribution; only required if passing custom tile URL.</li>
 <li><strong>API_key</strong> (<em>str</em><em>, </em><em>default None</em>) – API key for Cloudmade or Mapbox tiles.</li>
 <li><strong>detect_retina</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true and user is on a retina display, it will request four
@@ -770,6 +781,7 @@ of one to utilize the high resolution.</li>
 <li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
 <li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default False</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
 <li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 <li><strong>subdomains</strong> (<em>list of strings</em><em>, </em><em>default</em><em> [</em><em>'abc'</em><em>]</em>) – Subdomains of the tile service.</li>
 </ul>
 </td>
@@ -780,7 +792,7 @@ of one to utilize the high resolution.</li>
 
 <dl class="class">
 <dt id="folium.raster_layers.VideoOverlay">
-<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">VideoOverlay</code><span class="sig-paren">(</span><em>video_url</em>, <em>bounds</em>, <em>opacity=1.0</em>, <em>attr=None</em>, <em>autoplay=True</em>, <em>loop=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.VideoOverlay" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">VideoOverlay</code><span class="sig-paren">(</span><em>video_url</em>, <em>bounds</em>, <em>opacity=1.0</em>, <em>attr=None</em>, <em>autoplay=True</em>, <em>loop=True</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.VideoOverlay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Used to load and display a video over the map.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -793,6 +805,10 @@ of one to utilize the high resolution.</li>
 [lat_max, lon_max]]</li>
 <li><strong>opacity</strong> (<em>float</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>1.0</em><em>)</em>) – </li>
 <li><strong>attr</strong> (<em>string</em><em>, </em><em>default Leaflet's default</em><em> (</em><em>''</em><em>)</em>) – </li>
+<li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 </ul>
 </td>
 </tr>
@@ -802,7 +818,7 @@ of one to utilize the high resolution.</li>
 
 <dl class="class">
 <dt id="folium.raster_layers.WmsTileLayer">
-<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">WmsTileLayer</code><span class="sig-paren">(</span><em>url</em>, <em>name=None</em>, <em>attr=''</em>, <em>overlay=True</em>, <em>control=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.WmsTileLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.raster_layers.</code><code class="descname">WmsTileLayer</code><span class="sig-paren">(</span><em>url</em>, <em>name=None</em>, <em>attr=''</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.raster_layers.WmsTileLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Creates a Web Map Service (WMS) layer.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -821,7 +837,8 @@ Ex: ‘image/png’</li>
 <li><strong>attr</strong> (<em>str</em><em>, </em><em>default None</em>) – The attribution of the service.
 Will be displayed in the bottom right corner.</li>
 <li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
-<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 <li><strong>**kwargs</strong> (<em>additional keyword arguments</em>) – Passed through to the underlying tileLayer.wms object and can be used
 for setting extra tileLayer.wms parameters or as extra parameters in
 the WMS request.</li>
@@ -954,7 +971,7 @@ square with a shadow.  We set it ‘empty’ in folium.</li>
 
 <dl class="class">
 <dt id="folium.features.GeoJson">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">GeoJson</code><span class="sig-paren">(</span><em>data</em>, <em>style_function=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>smooth_factor=None</em>, <em>highlight_function=None</em>, <em>tooltip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.GeoJson" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">GeoJson</code><span class="sig-paren">(</span><em>data</em>, <em>style_function=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em>, <em>smooth_factor=None</em>, <em>highlight_function=None</em>, <em>tooltip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.GeoJson" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Creates a GeoJson object for plotting into a Map.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -971,8 +988,9 @@ in the JavaScript.
 <li><strong>style_function</strong> (<em>function</em><em>, </em><em>default None</em>) – Function mapping a GeoJson Feature to a style dict.</li>
 <li><strong>highlight_function</strong> (<em>function</em><em>, </em><em>default None</em>) – Function mapping a GeoJson Feature to a style dict for mouse events.</li>
 <li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
-<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default False</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
+<li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default True</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
 <li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 <li><strong>smooth_factor</strong> (<em>float</em><em>, </em><em>default None</em>) – How much to simplify the polyline on each zoom level. More means
 better performance and smoother look, and less means more accurate
 representation. Leaflet defaults to 1.0.</li>
@@ -1054,7 +1072,7 @@ If None, no popup will be displayed.</li>
 
 <dl class="class">
 <dt id="folium.features.TopoJson">
-<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">TopoJson</code><span class="sig-paren">(</span><em>data</em>, <em>object_path</em>, <em>style_function=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>smooth_factor=None</em>, <em>tooltip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.TopoJson" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">folium.features.</code><code class="descname">TopoJson</code><span class="sig-paren">(</span><em>data</em>, <em>object_path</em>, <em>style_function=None</em>, <em>name=None</em>, <em>overlay=True</em>, <em>control=True</em>, <em>show=True</em>, <em>smooth_factor=None</em>, <em>tooltip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.features.TopoJson" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#folium.map.Layer" title="folium.map.Layer"><code class="xref py py-class docutils literal"><span class="pre">folium.map.Layer</span></code></a></p>
 <p>Creates a TopoJson object for plotting into a Map.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1073,7 +1091,8 @@ Ex: ‘objects.myobject’.</li>
 <li><strong>style_function</strong> (<em>function</em><em>, </em><em>default None</em>) – A function mapping a TopoJson geometry to a style dict.</li>
 <li><strong>name</strong> (<em>string</em><em>, </em><em>default None</em>) – The name of the Layer, as it will appear in LayerControls</li>
 <li><strong>overlay</strong> (<em>bool</em><em>, </em><em>default False</em>) – Adds the layer as an optional overlay (True) or the base layer (False).</li>
-<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls</li>
+<li><strong>control</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the Layer will be included in LayerControls.</li>
+<li><strong>show</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether the layer will be shown on opening (only for overlays).</li>
 <li><strong>smooth_factor</strong> (<em>float</em><em>, </em><em>default None</em>) – How much to simplify the polyline on each zoom level. More means
 better performance and smoother look, and less means more accurate
 representation. Leaflet defaults to 1.0.</li>
@@ -1221,12 +1240,12 @@ Ex: ‘relative’, ‘absolute’</li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+113.g106d829 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g9e2ee74 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Rob Story.
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.5.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.6.Theme by <a href="http://github.com/vkvn">vkvn</a>
     </div>
   </body>
 </html>
