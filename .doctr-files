@@ -11,12 +11,13 @@
 ./_static/comment-close.png
 ./_static/comment.png
 ./_static/doctools.js
+./_static/documentation_options.js
 ./_static/down-pressed.png
 ./_static/down.png
 ./_static/f6.css
 ./_static/file.png
 ./_static/folium_logo.jpg
-./_static/jquery-3.1.0.js
+./_static/jquery-3.2.1.js
 ./_static/jquery.js
 ./_static/minus.png
 ./_static/plus.png
