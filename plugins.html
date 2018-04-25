@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>plugins &#8212; Folium 0.5.0+105.g4bdcb85 documentation</title>
+    <title>plugins &#8212; Folium 0.5.0+105.g065f6f3 documentation</title>
     <link rel="stylesheet" href="_static/f6.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -27,7 +27,7 @@
         <li class="right" >
           <a href="modules.html" title="folium"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g4bdcb85 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g065f6f3 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,7 +74,56 @@
 <span id="plugins"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plugins</span></code><a class="headerlink" href="#module-folium.plugins" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="folium-plugins">
 <h2>Folium plugins<a class="headerlink" href="#folium-plugins" title="Permalink to this headline">¶</a></h2>
-<p>Wrap some of the most populat leaflet external plugins.</p>
+<p>Wrap some of the most popular leaflet external plugins.</p>
+<dl class="class">
+<dt id="folium.plugins.BeautifyIcon">
+<em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">BeautifyIcon</code><span class="sig-paren">(</span><em>icon=None</em>, <em>icon_shape=None</em>, <em>border_width=3</em>, <em>border_color='#000'</em>, <em>text_color='#000'</em>, <em>background_color='#FFF'</em>, <em>inner_icon_style=''</em>, <em>spin=False</em>, <em>number=None</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.BeautifyIcon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">branca.element.MacroElement</span></code></p>
+<p>Create a BeautifyIcon that can be added to a Marker</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>icon</strong> (<em>string</em><em>, </em><em>default None</em>) – the Font-Awesome icon name to use to render the marker.</li>
+<li><strong>icon_shape</strong> (<em>string</em><em>, </em><em>default None</em>) – the icon shape</li>
+<li><strong>border_width</strong> (<em>integer</em><em>, </em><em>default 3</em>) – the border width of the icon</li>
+<li><strong>border_color</strong> (<em>string with hexadecimal RGB</em><em>, </em><em>default '#000'</em>) – the border color of the icon</li>
+<li><strong>text_color</strong> (<em>string with hexadecimal RGB</em><em>, </em><em>default '#000'</em>) – the text color of the icon</li>
+<li><strong>background_color</strong> (<em>string with hexadecimal RGB</em><em>, </em><em>default '#FFF'</em>) – the background color of the icon</li>
+<li><strong>inner_icon_style</strong> (<em>string with css styles for the icon</em><em>, </em><em>default ''</em>) – the css styles of the icon</li>
+<li><strong>spin</strong> (<em>boolean</em><em>, </em><em>default False</em>) – allow the icon to be spinning.</li>
+<li><strong>number</strong> (<em>integer</em><em>, </em><em>default None</em>) – the number of the icon.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Plugin Website: <a class="reference external" href="https://github.com/marslan390/BeautifyMarker">https://github.com/marslan390/BeautifyMarker</a>
+&gt;&gt;&gt; BeautifyIcon(text_color=’#000’, border_color=’transparent’,</p>
+<blockquote>
+<div>background_color=’#FFF’).add_to(marker)</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number_icon</span> <span class="o">=</span> <span class="n">BeautifyIcon</span><span class="p">(</span><span class="n">text_color</span><span class="o">=</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="n">border_color</span><span class="o">=</span><span class="s1">&#39;transparent&#39;</span><span class="p">,</span>
+<span class="go">                                background_color=&#39;#FFF&#39;, number=10,</span>
+<span class="go">                                inner_icon_style=&#39;font-size:12px;padding-top:-5px;&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">45.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.3</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="s1">&#39;Portland, OR&#39;</span><span class="p">),</span> <span class="n">icon</span><span class="o">=</span><span class="n">number_icon</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BeautifyIcon</span><span class="p">(</span><span class="n">icon</span><span class="o">=</span><span class="s1">&#39;arrow-down&#39;</span><span class="p">,</span> <span class="n">icon_shape</span><span class="o">=</span><span class="s1">&#39;marker&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="folium.plugins.BeautifyIcon.ICON_SHAPE_TYPES">
+<code class="descname">ICON_SHAPE_TYPES</code><em class="property"> = ['circle', 'circle-dot', 'doughnut', 'rectangle-dot', 'marker', None]</em><a class="headerlink" href="#folium.plugins.BeautifyIcon.ICON_SHAPE_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="folium.plugins.BeautifyIcon.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.BeautifyIcon.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the HTML representation of the element.</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="class">
 <dt id="folium.plugins.BoatMarker">
 <em class="property">class </em><code class="descclassname">folium.plugins.</code><code class="descname">BoatMarker</code><span class="sig-paren">(</span><em>location</em>, <em>popup=None</em>, <em>icon=None</em>, <em>heading=0</em>, <em>wind_heading=None</em>, <em>wind_speed=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#folium.plugins.BoatMarker" title="Permalink to this definition">¶</a></dt>
@@ -609,7 +658,7 @@ default ‘topleft’</li>
         <li class="right" >
           <a href="modules.html" title="folium"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g4bdcb85 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Folium 0.5.0+105.g065f6f3 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
