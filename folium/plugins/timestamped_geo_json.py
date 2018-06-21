@@ -116,7 +116,7 @@ class TimestampedGeoJson(MacroElement):
         """)  # noqa
 
     def __init__(self, data, transition_time=200, loop=True, auto_play=True, add_last_point=True,
-                 period='P1D', min_speed=0.1, max_speed=10, loop_button=False,
+                 period='P1D', duration='P1D', min_speed=0.1, max_speed=10, loop_button=False,
                  date_options='YYYY/MM/DD hh:mm:ss', time_slider_drag_update=False):
         super(TimestampedGeoJson, self).__init__()
         self._name = 'TimestampedGeoJson'
@@ -132,6 +132,7 @@ class TimestampedGeoJson(MacroElement):
             self.data = data
         self.add_last_point = bool(add_last_point)
         self.period = period
+        self.duration = duration
         self.date_options = date_options
 
         options = {
